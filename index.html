@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Index Trend</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .chart-container {
+            width: 48%;
+            display: inline-block;
+            margin: 1%;
+            border: 1px solid #444;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .chart-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <h6>Shanghai Composite Index Trend with Multiple Signals</h6>
+    <div class="chart-row">
+    {% for plot_html in plot_htmls %}
+        <div class="chart-container">
+            {{ plot_html | safe }}
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html> 
